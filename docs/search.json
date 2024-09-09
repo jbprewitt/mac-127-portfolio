@@ -2,21 +2,11 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "COMP/STAT112 Notebook",
+    "title": "COMP127 Notebook",
     "section": "",
     "text": "Introduction\nThis is my online notebook for COMP/STAT112 course taken at Macalester College. Please, use the side bar on the left for navigation.",
     "crumbs": [
       "Introduction"
-    ]
-  },
-  {
-    "objectID": "activities/README.html",
-    "href": "activities/README.html",
-    "title": "Activities",
-    "section": "",
-    "text": "All activities live here.",
-    "crumbs": [
-      "Activities"
     ]
   },
   {
@@ -27,6 +17,39 @@
     "text": "All notes live here.",
     "crumbs": [
       "Notes"
+    ]
+  },
+  {
+    "objectID": "notes/9.4-InClassActivity.html",
+    "href": "notes/9.4-InClassActivity.html",
+    "title": "1  9/4 In Class Activity",
+    "section": "",
+    "text": "In this activity we were asked to look at three versions of instructions on how to open a door, each with varying levels of abstraction and resilliancy, and then made our own version for fastening a seatbelt.\nKey Takeaways\n\nAn abstraction takes something complex and, by hiding its details, presents it in a form that is simpler. High abstraction means less details and more hidden complexion, and low abstraction means lots of details with little hidden complexity.\n\nThe details that are hidden at high levels of abstraction are implementation details\n\nGenerality is the ability for the same code to handle many situations. If “open” means different things for different doors — turning a knob versus pushing a bar, for example — Version 3 has enough generality to handle that variety.\nResilience is the ability for existing code to continue working despite changes in its context. If we create a new kind of door that opens in some new way — maybe you have to turn a crank while whistling and patting your head, for example — Version 3 is resilient to that change.",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>9/4 In Class Activity</span>"
+    ]
+  },
+  {
+    "objectID": "notes/9.6-Rdg-JavaBasics.html",
+    "href": "notes/9.6-Rdg-JavaBasics.html",
+    "title": "2  9/6 Reading - Java Basics",
+    "section": "",
+    "text": "Types of Comments:\n\nSlash-asterisk syntax. The comment can continue across many lines. It extends until the next asterisk-slash. Start with /* and end with */\nDouble slash syntax. It is one line only. Start line with //\n\nNote:\n\nSYNTAX refers to the rules for expressing code in some fixed form (usually text).\nSEMANTICS is what code means in a given language, the rules for what each building block of the language does when the program runs.\n\nJava code is meant to write larger programs so it can be more complicated. For example, writing “hello world” involves:\n\ninclude a “package declaration” that names the folder this file is supposed to be inside, then\ninclude a “class declaration” that creates a container in which code can live, then\n“declare a main method” that says where the program should start.\n\nJava Notes:\n\nShortcut: You can type sout and then press the tab key, and it will write out System.out.println(); for you!\nJava requires you to end each statement with a semicolon;\nIntegers, strings, and floating point are essentially the same as in Python!\nCreating Variables\n\nyou have to declare a variable before you can use it. First write something like: String mascot;. Then you can actually assign items to it like: mascot = “Coo”;\n\nyou can also do it in a shortcut with String altMascot = “Nessie”; type of code\n\nWhen you assign a value to a newly declared variable, it is called initializing the variable\n\nConditionals\n\nThey still exist in Java!\nExample code: if (thousand &lt; 99) { System.out.println(“A thousand is teeny.”); } else if (thousand &lt; 999) { System.out.println(“A thousand is not that big of a number.”); System.out.println(“Other numbers are way bigger.”); } else if (thousand &lt; 9999) { System.out.println(“A thousand is a pretty big number,”); System.out.println(“at least if you ask me.”); } else { System.out.println(“A thousand is super duper huge!”); }\n\nCurly braces { } enclose chunks of code in Java. Java uses those braces and those braces to determine whether multiple lines are grouped together in a block.\nJava does not pay any attention to how you indent your code. Java mostly ignores whitespace. (The term “whitespace” refers to spaces, tabs, carriage returns (the ends of lines), and any other characters that show up as empty space.)",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>9/6 Reading - Java Basics</span>"
+    ]
+  },
+  {
+    "objectID": "notes/9.9-Rdg-RKindsOfTypes.html",
+    "href": "notes/9.9-Rdg-RKindsOfTypes.html",
+    "title": "3  9/9 Reading - R Kinds of Types",
+    "section": "",
+    "text": "Primitive Types\nShortcuts to assign variable but modify value:\n\n+= means the value plus a given number\n-= means the value minus a given number\n*= means the value multiplied by a given number\n/= means the value divided by a given number\n\nIncrementing shortcut, or adding just 1 can look like:\n\nvariable = variable + 1\nvariable += 1\n++variable\nvariable++\n\nTo decrement, just do this but swap + for -\nJava type ‘int’ has a min and max value; if it goes off this range it “overflows” and Java has the result wrap around (like a clock)\nPrimitive Types:\n\nbyte range: -128…127\nshort range: -32768…32767\nint range: -2147483648…2147483647\nlong range: -9223372036854775808…922337203685477580\nFloat- fractions are allowed, and results are approx\n\nYou might use this when something forces you to or you are worries about efficient memory usage\n\nDouble - a type of float, but is more precise\nchar - represents one character of a string\nboolean - true or false\n\nWith type casting you can covert one type to another. For example:\n  int thousand = 1000;\n  short thousandShort = (short) thousand;  // Here is         the type cast\n  System.out.println(thousandShort);\nFeatures of Primitive Types:\n\na fixed range of values/memory\ncan be worked with operators (+ - * / etc)\nAllow for fast computation\n\nObject Types\nStrings:\n\nNo fixed size, slower computation, can use operators as well as methods\n\nWhen we call/invoke a method, we are asking the receiver to take action. The action is the method name. Ex: mascot.length() where mascot is the receiver and length is the action\nMethods are specific to the type of receiver\n\n== doesnt make them the same item, it just means it has the same chatacters. To make strings the same try .equals() method\n\nPrimitive Types vs Object Types\nPrimitive Types:\n\nnames are lowercase\ndont have methods\noperations are fast\nalways copied\ncannot be null\n\nObject Types:\n\nnames are in camel case\nmethods\noperations can be slower\nmany variables can point to the same object\ncan be null",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>9/9 Reading - R Kinds of Types</span>"
     ]
   }
 ]

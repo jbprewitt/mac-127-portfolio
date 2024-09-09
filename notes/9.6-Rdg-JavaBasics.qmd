@@ -1,0 +1,46 @@
+---
+title: "9/6 Reading - Java Basics"
+---
+
+Types of Comments:
+
+* Slash-asterisk syntax. The comment can continue across many lines. It
+extends until the next asterisk-slash. Start with /* and end with */
+* Double slash syntax. It is one line only. Start line with //
+
+Note:
+
+* SYNTAX refers to the rules for expressing code in some fixed form (usually text).
+* SEMANTICS is what code means in a given language, the rules for what each building block of the language does when the program runs.
+
+Java code is meant to write larger programs so it can be more complicated. For example, writing "hello world" involves:
+
+* include a “package declaration” that names the folder this file is supposed to be inside, then
+* include a “class declaration” that creates a container in which code can live, then
+* “declare a main method” that says where the program should start.
+
+Java Notes:
+
+* Shortcut: You can type sout and then press the tab key, and it will write out System.out.println(); for you!
+* Java requires you to end each statement with a semicolon;
+* Integers, strings, and floating point are essentially the same as in Python!
+* Creating Variables
+  + you have to declare a variable before you can use it. First write something like: *String mascot;*. Then you can actually assign items to it like: *mascot = "Coo";*
+      - you can also do it in a shortcut with *String altMascot = "Nessie";* type of code
+  + When you assign a value to a newly declared variable, it is called *initializing* the variable
+* Conditionals
+  + They still exist in Java!
+  + Example code: 
+    if (thousand < 99) {
+            System.out.println("A thousand is teeny.");
+        } else if (thousand < 999) {
+            System.out.println("A thousand is not that big of a number.");
+            System.out.println("Other numbers are way bigger.");
+        } else if (thousand < 9999) {
+            System.out.println("A thousand is a pretty big number,");
+            System.out.println("at least if you ask me.");
+        } else {
+            System.out.println("A thousand is super duper huge!");
+        }
+* Curly braces { } enclose chunks of code in Java. Java uses those braces and those braces to determine whether multiple lines are grouped together in a block.
+* Java does not pay any attention to how you indent your code. Java mostly ignores whitespace. (The term “whitespace” refers to spaces, tabs, carriage returns (the ends of lines), and any other characters that show up as empty space.)

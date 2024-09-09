@@ -1,0 +1,12 @@
+---
+title: "9/4 In Class Activity"
+---
+
+In this activity we were asked to look at three versions of instructions on how to open a door, each with varying levels of abstraction and resilliancy, and then made our own version for fastening a seatbelt. 
+
+**Key Takeaways**
+
+* An abstraction takes something complex and, by hiding its details, presents it in a form that is simpler. High abstraction means less details and more hidden complexion, and low abstraction means lots of details with little hidden complexity. 
+  + The details that are hidden at high levels of abstraction are implementation details
+* Generality is the ability for the same code to handle many situations. If “open” means different things for different doors — turning a knob versus pushing a bar, for example — Version 3 has enough generality to handle that variety.
+* Resilience is the ability for existing code to continue working despite changes in its context. If we create a new kind of door that opens in some new way — maybe you have to turn a crank while whistling and patting your head, for example — Version 3 is resilient to that change.

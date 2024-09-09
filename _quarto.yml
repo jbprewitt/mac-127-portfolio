@@ -3,24 +3,19 @@ project:
   output-dir: docs
 
 book:
-  title: "COMP/STAT112 Notebook"
-  author: "Your Name Here"
-  date: "Date Here"
+  title: "COMP127 Notebook"
+  author: "Julia Prewitt"
+  date: "Fall 2024"
   reader-mode: true
   
   chapters:
     - index.qmd
 
-    - part: activities/README.qmd
-      chapters: 
-      - activities/activity-01.qmd
-      - activities/activity-02.qmd
-      - activities/activity-03.qmd
-    
     - part: notes/README.qmd
       chapters: 
-      - notes/note-01.qmd
-      - notes/note-02.qmd
+      - notes/9.4-InClassActivity.qmd
+      - notes/9.6-Rdg-JavaBasics.qmd
+      - notes/9.9-Rdg-RKindsOfTypes.qmd
 
 format:
   html:

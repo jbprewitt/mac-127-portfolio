@@ -1,0 +1,74 @@
+---
+title: "9/9 Reading - R Kinds of Types"
+---
+
+**Primitive Types**
+
+Shortcuts to assign variable but modify value: 
+
+* += means the value plus a given number
+* -= means the value minus a given number
+* *= means the value multiplied by a given number
+* /= means the value divided by a given number
+
+Incrementing shortcut, or adding just 1 can look like:
+
+* variable = variable + 1
+* variable += 1
+* ++variable
+* variable++
+
+To decrement, just do this but swap + for -
+
+Java type 'int' has a min and max value; if it goes off this range it "overflows" and Java has the result wrap around (like a clock)
+
+Primitive Types:
+
+* byte range: -128...127
+* short range: -32768...32767
+* int range: -2147483648...2147483647
+* long range: -9223372036854775808...922337203685477580
+* Float- fractions are allowed, and results are approx
+  + You might use this when something forces you to or you are worries about efficient memory usage
+* Double - a type of float, but is more precise 
+* char - represents one character of a string
+* boolean - true or false
+
+With type casting you can covert one type to another. For example: 
+
+      int thousand = 1000;
+      short thousandShort = (short) thousand;  // Here is         the type cast
+      System.out.println(thousandShort);
+
+Features of Primitive Types:
+
+* a fixed range of values/memory
+* can be worked with operators (+ - * / etc)
+* Allow for fast computation
+
+**Object Types**
+
+Strings:
+
+* No fixed size, slower computation, can use operators as well as *methods*
+  + When we call/invoke a method, we are asking the receiver to take action. The action is the method name. Ex: mascot.length() where mascot is the receiver and length is the action
+  + Methods are specific to the type of receiver
+* == doesnt make them the same item, it just means it has the same chatacters. To make strings the same try .equals() method
+  
+**Primitive Types vs Object Types**
+
+Primitive Types:
+
+* names are lowercase
+* dont have methods
+* operations are fast
+* always copied
+* cannot be null
+
+Object Types:
+
+* names are in camel case
+* methods
+* operations can be slower
+* many variables can point to the same object
+* can be null
