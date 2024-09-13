@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>COMP127 Notebook - 3&nbsp; 9/9 Reading - R Kinds of Types</title>
+<title>COMP127 Notebook - 4&nbsp; 9/11 Reading - R List Basics &amp; Kinds of Testing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notes/9.11-Rdg-RListBasics.html" rel="next">
-<link href="../notes/9.6-Rdg-JavaBasics.html" rel="prev">
+<link href="../notes/9.13-Rdg-LoopBasics.html" rel="next">
+<link href="../notes/9.9-Rdg-RKindsOfTypes.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/README.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/9.9-Rdg-RKindsOfTypes.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">9/9 Reading - R Kinds of Types</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/README.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/9.11-Rdg-RListBasics.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">9/11 Reading - R List Basics &amp; Kinds of Testing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -176,13 +176,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/9.9-Rdg-RKindsOfTypes.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notes/9.9-Rdg-RKindsOfTypes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">9/9 Reading - R Kinds of Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/9.11-Rdg-RListBasics.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/9.11-Rdg-RListBasics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">9/11 Reading - R List Basics &amp; Kinds of Testing</span></span></a>
   </div>
 </li>
@@ -200,14 +200,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#software-testing" id="toc-software-testing" class="nav-link active" data-scroll-target="#software-testing"><span class="header-section-number">5</span> Software Testing</a>
+  <ul class="collapse">
+  <li><a href="#kinds-of-testing" id="toc-kinds-of-testing" class="nav-link" data-scroll-target="#kinds-of-testing"><span class="header-section-number">5.0.1</span> Kinds of Testing</a></li>
+  <li><a href="#list-basics-in-java" id="toc-list-basics-in-java" class="nav-link" data-scroll-target="#list-basics-in-java"><span class="header-section-number">5.0.2</span> List Basics in Java</a></li>
+  <li><a href="#looping-over-lists" id="toc-looping-over-lists" class="nav-link" data-scroll-target="#looping-over-lists"><span class="header-section-number">5.0.3</span> Looping over Lists</a></li>
+  <li><a href="#getting-parts-of-lists" id="toc-getting-parts-of-lists" class="nav-link" data-scroll-target="#getting-parts-of-lists"><span class="header-section-number">5.0.4</span> Getting parts of lists</a></li>
+  <li><a href="#mutability-and-immutability" id="toc-mutability-and-immutability" class="nav-link" data-scroll-target="#mutability-and-immutability"><span class="header-section-number">5.0.5</span> Mutability and Immutability</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/README.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/9.9-Rdg-RKindsOfTypes.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">9/9 Reading - R Kinds of Types</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/README.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/9.11-Rdg-RListBasics.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">9/11 Reading - R List Basics &amp; Kinds of Testing</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">9/9 Reading - R Kinds of Types</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">9/11 Reading - R List Basics &amp; Kinds of Testing</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -224,78 +237,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Primitive Types</strong></p>
-<p>Shortcuts to assign variable but modify value:</p>
+<section id="software-testing" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Software Testing</h1>
+<p>Trying to break your code is at the core of software testing; it means you can make sure your code never doesn’t work (always works)!</p>
+<section id="kinds-of-testing" class="level3" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="kinds-of-testing"><span class="header-section-number">5.0.1</span> Kinds of Testing</h3>
+<p>Manual/Interactive Testing: a human interacts with the code by inputting data and observing the results. This could be made up along the way or through a checklist.</p>
 <ul>
-<li>+= means the value plus a given number</li>
-<li>-= means the value minus a given number</li>
-<li>*= means the value multiplied by a given number</li>
-<li>/= means the value divided by a given number</li>
+<li>Pros: easy to set up, encourages exploratory testing, can catch problems that the tester wasn’t even looking for but happened to notice</li>
+<li>Cons: time-consuming, not easy to repeat, may not be perfectly consistent or thorough every time, easy to miss things</li>
 </ul>
-<p>Incrementing shortcut, or adding just 1 can look like:</p>
+<p>Automated Testing: a developer writes test code that goes through a predetermined list of test cases and checks that the code is producing the correct result. Code checks code.</p>
 <ul>
-<li>variable = variable + 1</li>
-<li>variable += 1</li>
-<li>++variable</li>
-<li>variable++</li>
+<li>Pros: consistent for different people, consistent over time, tests run fast so it makes sense to test often, excellent for catching regressions (things that used to work, but don’t work anymore)</li>
+<li>cons: only tests what the test code is looking for, coding tests is time-consuming, test code has to be maintained just like other code and may become a burden, some kinds of tests are hard to automate</li>
 </ul>
-<p>To decrement, just do this but swap + for -</p>
-<p>Java type ‘int’ has a min and max value; if it goes off this range it “overflows” and Java has the result wrap around (like a clock)</p>
-<p>Primitive Types:</p>
+<p>Unit Testing: testing one individual part of the software being checked</p>
+<p>Integration testing: making sure that the entire thing works</p>
+</section>
+<section id="list-basics-in-java" class="level3" data-number="5.0.2">
+<h3 data-number="5.0.2" class="anchored" data-anchor-id="list-basics-in-java"><span class="header-section-number">5.0.2</span> List Basics in Java</h3>
+<p>Same as in python, lists…</p>
 <ul>
-<li>byte range: -128…127</li>
-<li>short range: -32768…32767</li>
-<li>int range: -2147483648…2147483647</li>
-<li>long range: -9223372036854775808…922337203685477580</li>
-<li>Float- fractions are allowed, and results are approx
-<ul>
-<li>You might use this when something forces you to or you are worries about efficient memory usage</li>
-</ul></li>
-<li>Double - a type of float, but is more precise</li>
-<li>char - represents one character of a string</li>
-<li>boolean - true or false</li>
+<li>Contain many values of the same type</li>
+<li>have consistent order</li>
+<li>may contain duplicates</li>
 </ul>
-<p>With type casting you can covert one type to another. For example:</p>
-<pre><code>  int thousand = 1000;
-  short thousandShort = (short) thousand;  // Here is         the type cast
-  System.out.println(thousandShort);</code></pre>
-<p>Features of Primitive Types:</p>
+<p>Making Lists in Java:</p>
+<p>List<variable type=""> variable name = list.of(“item1”, “item2”)</variable></p>
+<p>If the items are primitive type, you have to use “wrapper type”, where you spell out the name of the primitive type as a whole word and capitalize it. Ex: “int” becomes “Integer”</p>
+</section>
+<section id="looping-over-lists" class="level3" data-number="5.0.3">
+<h3 data-number="5.0.3" class="anchored" data-anchor-id="looping-over-lists"><span class="header-section-number">5.0.3</span> Looping over Lists</h3>
+<p>to do something with each list item use a “for each” loop like:</p>
+<p>for(String word : magicWords) { System.out.println(“I say” + word + “!!”); }</p>
+<p>Things to note:</p>
 <ul>
-<li>a fixed range of values/memory</li>
-<li>can be worked with operators (+ - * / etc)</li>
-<li>Allow for fast computation</li>
+<li>the variable ‘word’ gets a new value for each element of the loop</li>
+<li>you have to declare ‘word’ just like any other variable</li>
+<li>The variable doesnt exist outside the loop</li>
+<li>You can nest lists inside of lists</li>
 </ul>
-<p><strong>Object Types</strong></p>
-<p>Strings:</p>
+</section>
+<section id="getting-parts-of-lists" class="level3" data-number="5.0.4">
+<h3 data-number="5.0.4" class="anchored" data-anchor-id="getting-parts-of-lists"><span class="header-section-number">5.0.4</span> Getting parts of lists</h3>
+<p>You can get a single item from a list:</p>
+<pre><code>  String singleMagicWord = magicWords.get(1);
+  System.out.println("singleMagicWord = " + singleMagicWord);</code></pre>
+<p>In the above example, the number 1 is the index, or the number that identifies position in a list. List indecies count from 0.</p>
+<p>To find the length of a list you can use the method .size(), or you can modify that method to find the last item by doing .size()-1</p>
+<p>You can also ask for the index of a specific word like this:</p>
+<pre><code>    int indexOfPocus = magicWords.indexOf("pocus");
+
+    System.out.println("indexOfPocus = " + indexOfPocus);
+    System.out.println("word at that position = " +                         magicWords.get(indexOfPocus));</code></pre>
+</section>
+<section id="mutability-and-immutability" class="level3" data-number="5.0.5">
+<h3 data-number="5.0.5" class="anchored" data-anchor-id="mutability-and-immutability"><span class="header-section-number">5.0.5</span> Mutability and Immutability</h3>
+<p>Mutible values: they can change and are modifiable Immutable values: cannot change! must replace old with new</p>
+<p>Lists can be both mutable and immutable. When you make a list with List.of(…) it is immutable; the .add() method tries to modify the list rather than make a new one. The work around to creating a new mutable list is to do something like the following:</p>
+<pre><code>   List&lt;String&gt; mutableList = new ArrayList&lt;&gt;();
+    System.out.println("mutableList = " + mutableList);
+    </code></pre>
+<p>new ArrayList,.() can sort of mean “new empty mutable list” and can be edited with methods like .set, .add, .remove, etc</p>
+<p>Shortcuts for making a new list and adding all the elements from another list:</p>
 <ul>
-<li>No fixed size, slower computation, can use operators as well as <em>methods</em>
-<ul>
-<li>When we call/invoke a method, we are asking the receiver to take action. The action is the method name. Ex: mascot.length() where mascot is the receiver and length is the action</li>
-<li>Methods are specific to the type of receiver</li>
-</ul></li>
-<li>== doesnt make them the same item, it just means it has the same chatacters. To make strings the same try .equals() method</li>
-</ul>
-<p><strong>Primitive Types vs Object Types</strong></p>
-<p>Primitive Types:</p>
-<ul>
-<li>names are lowercase</li>
-<li>dont have methods</li>
-<li>operations are fast</li>
-<li>always copied</li>
-<li>cannot be null</li>
-</ul>
-<p>Object Types:</p>
-<ul>
-<li>names are in camel case</li>
-<li>methods</li>
-<li>operations can be slower</li>
-<li>many variables can point to the same object</li>
-<li>can be null</li>
+<li>addAll() method</li>
+<li>Put the list you want to copy right between parenthesis of new ArrayList,.(here!)</li>
 </ul>
 
 
 <!-- -->
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -760,90 +775,106 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/9.6-Rdg-JavaBasics.html" class="pagination-link" aria-label="9/6 Reading - Java Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">9/6 Reading - Java Basics</span></span>
+      <a href="../notes/9.9-Rdg-RKindsOfTypes.html" class="pagination-link" aria-label="9/9 Reading - R Kinds of Types">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">9/9 Reading - R Kinds of Types</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/9.11-Rdg-RListBasics.html" class="pagination-link" aria-label="9/11 Reading - R List Basics &amp; Kinds of Testing">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">9/11 Reading - R List Basics &amp; Kinds of Testing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/9.13-Rdg-LoopBasics.html" class="pagination-link" aria-label="9/13 Reading - Loop Basics in Java">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">9/13 Reading - Loop Basics in Java</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "9/9 Reading - R Kinds of Types"</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">---</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a>**Primitive Types**</span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>Shortcuts to assign variable but modify value: </span>
-<span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="ss">* </span>+= means the value plus a given number</span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="ss">* </span>-= means the value minus a given number</span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="ss">* </span>*= means the value multiplied by a given number</span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="ss">* </span>/= means the value divided by a given number</span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a>Incrementing shortcut, or adding just 1 can look like:</span>
-<span id="cb2-15"><a href="#cb2-15"></a></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="ss">* </span>variable = variable + 1</span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="ss">* </span>variable += 1</span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="ss">* </span>++variable</span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="ss">* </span>variable++</span>
-<span id="cb2-20"><a href="#cb2-20"></a></span>
-<span id="cb2-21"><a href="#cb2-21"></a>To decrement, just do this but swap + for -</span>
-<span id="cb2-22"><a href="#cb2-22"></a></span>
-<span id="cb2-23"><a href="#cb2-23"></a>Java type 'int' has a min and max value; if it goes off this range it "overflows" and Java has the result wrap around (like a clock)</span>
-<span id="cb2-24"><a href="#cb2-24"></a></span>
-<span id="cb2-25"><a href="#cb2-25"></a>Primitive Types:</span>
-<span id="cb2-26"><a href="#cb2-26"></a></span>
-<span id="cb2-27"><a href="#cb2-27"></a><span class="ss">* </span>byte range: -128...127</span>
-<span id="cb2-28"><a href="#cb2-28"></a><span class="ss">* </span>short range: -32768...32767</span>
-<span id="cb2-29"><a href="#cb2-29"></a><span class="ss">* </span>int range: -2147483648...2147483647</span>
-<span id="cb2-30"><a href="#cb2-30"></a><span class="ss">* </span>long range: -9223372036854775808...922337203685477580</span>
-<span id="cb2-31"><a href="#cb2-31"></a><span class="ss">* </span>Float- fractions are allowed, and results are approx</span>
-<span id="cb2-32"><a href="#cb2-32"></a><span class="ss">  + </span>You might use this when something forces you to or you are worries about efficient memory usage</span>
-<span id="cb2-33"><a href="#cb2-33"></a><span class="ss">* </span>Double - a type of float, but is more precise </span>
-<span id="cb2-34"><a href="#cb2-34"></a><span class="ss">* </span>char - represents one character of a string</span>
-<span id="cb2-35"><a href="#cb2-35"></a><span class="ss">* </span>boolean - true or false</span>
-<span id="cb2-36"><a href="#cb2-36"></a></span>
-<span id="cb2-37"><a href="#cb2-37"></a>With type casting you can covert one type to another. For example: </span>
-<span id="cb2-38"><a href="#cb2-38"></a></span>
-<span id="cb2-39"><a href="#cb2-39"></a><span class="in">      int thousand = 1000;</span></span>
-<span id="cb2-40"><a href="#cb2-40"></a><span class="in">      short thousandShort = (short) thousand;  // Here is         the type cast</span></span>
-<span id="cb2-41"><a href="#cb2-41"></a><span class="in">      System.out.println(thousandShort);</span></span>
-<span id="cb2-42"><a href="#cb2-42"></a></span>
-<span id="cb2-43"><a href="#cb2-43"></a>Features of Primitive Types:</span>
-<span id="cb2-44"><a href="#cb2-44"></a></span>
-<span id="cb2-45"><a href="#cb2-45"></a><span class="ss">* </span>a fixed range of values/memory</span>
-<span id="cb2-46"><a href="#cb2-46"></a><span class="ss">* </span>can be worked with operators (+ - * / etc)</span>
-<span id="cb2-47"><a href="#cb2-47"></a><span class="ss">* </span>Allow for fast computation</span>
-<span id="cb2-48"><a href="#cb2-48"></a></span>
-<span id="cb2-49"><a href="#cb2-49"></a>**Object Types**</span>
-<span id="cb2-50"><a href="#cb2-50"></a></span>
-<span id="cb2-51"><a href="#cb2-51"></a>Strings:</span>
-<span id="cb2-52"><a href="#cb2-52"></a></span>
-<span id="cb2-53"><a href="#cb2-53"></a><span class="ss">* </span>No fixed size, slower computation, can use operators as well as *methods*</span>
-<span id="cb2-54"><a href="#cb2-54"></a><span class="ss">  + </span>When we call/invoke a method, we are asking the receiver to take action. The action is the method name. Ex: mascot.length() where mascot is the receiver and length is the action</span>
-<span id="cb2-55"><a href="#cb2-55"></a><span class="ss">  + </span>Methods are specific to the type of receiver</span>
-<span id="cb2-56"><a href="#cb2-56"></a><span class="ss">* </span>== doesnt make them the same item, it just means it has the same chatacters. To make strings the same try .equals() method</span>
-<span id="cb2-57"><a href="#cb2-57"></a>  </span>
-<span id="cb2-58"><a href="#cb2-58"></a>**Primitive Types vs Object Types**</span>
-<span id="cb2-59"><a href="#cb2-59"></a></span>
-<span id="cb2-60"><a href="#cb2-60"></a>Primitive Types:</span>
-<span id="cb2-61"><a href="#cb2-61"></a></span>
-<span id="cb2-62"><a href="#cb2-62"></a><span class="ss">* </span>names are lowercase</span>
-<span id="cb2-63"><a href="#cb2-63"></a><span class="ss">* </span>dont have methods</span>
-<span id="cb2-64"><a href="#cb2-64"></a><span class="ss">* </span>operations are fast</span>
-<span id="cb2-65"><a href="#cb2-65"></a><span class="ss">* </span>always copied</span>
-<span id="cb2-66"><a href="#cb2-66"></a><span class="ss">* </span>cannot be null</span>
-<span id="cb2-67"><a href="#cb2-67"></a></span>
-<span id="cb2-68"><a href="#cb2-68"></a>Object Types:</span>
-<span id="cb2-69"><a href="#cb2-69"></a></span>
-<span id="cb2-70"><a href="#cb2-70"></a><span class="ss">* </span>names are in camel case</span>
-<span id="cb2-71"><a href="#cb2-71"></a><span class="ss">* </span>methods</span>
-<span id="cb2-72"><a href="#cb2-72"></a><span class="ss">* </span>operations can be slower</span>
-<span id="cb2-73"><a href="#cb2-73"></a><span class="ss">* </span>many variables can point to the same object</span>
-<span id="cb2-74"><a href="#cb2-74"></a><span class="ss">* </span>can be null</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="an">title:</span><span class="co"> "9/11 Reading - R List Basics &amp; Kinds of Testing"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">---</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu"># Software Testing</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>Trying to break your code is at the core of software testing; it means you can make sure your code never doesn't work (always works)!</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="fu">### Kinds of Testing</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a>Manual/Interactive Testing: a human interacts with the code by inputting data and observing the results. This could be made up along the way or through a checklist.</span>
+<span id="cb4-12"><a href="#cb4-12"></a></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="ss">* </span>Pros: easy to set up, encourages exploratory testing, can catch problems that the tester wasn’t even looking for but happened to notice</span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="ss">* </span>Cons:  time-consuming, not easy to repeat, may not be perfectly consistent or thorough every time, easy to miss things</span>
+<span id="cb4-15"><a href="#cb4-15"></a></span>
+<span id="cb4-16"><a href="#cb4-16"></a>Automated Testing: a developer writes test code that goes through a predetermined list of test cases and checks that the code is producing the correct result. Code checks code. </span>
+<span id="cb4-17"><a href="#cb4-17"></a></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="ss">* </span>Pros: consistent for different people, consistent over time, tests run fast so it makes sense to test often, excellent for catching regressions (things that used to work, but don’t work anymore)</span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="ss">* </span>cons: only tests what the test code is looking for, coding tests is time-consuming, test code has to be maintained just like other code and may become a burden, some kinds of tests are hard to automate</span>
+<span id="cb4-20"><a href="#cb4-20"></a></span>
+<span id="cb4-21"><a href="#cb4-21"></a>Unit Testing: testing one individual part of the software being checked</span>
+<span id="cb4-22"><a href="#cb4-22"></a></span>
+<span id="cb4-23"><a href="#cb4-23"></a>Integration testing: making sure that the entire thing works</span>
+<span id="cb4-24"><a href="#cb4-24"></a></span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="fu">### List Basics in Java</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a></span>
+<span id="cb4-27"><a href="#cb4-27"></a>Same as in python, lists... </span>
+<span id="cb4-28"><a href="#cb4-28"></a></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="ss">* </span>Contain many values of the same type</span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="ss">* </span>have consistent order</span>
+<span id="cb4-31"><a href="#cb4-31"></a><span class="ss">* </span>may contain duplicates </span>
+<span id="cb4-32"><a href="#cb4-32"></a></span>
+<span id="cb4-33"><a href="#cb4-33"></a>Making Lists in Java:</span>
+<span id="cb4-34"><a href="#cb4-34"></a></span>
+<span id="cb4-35"><a href="#cb4-35"></a>List&lt;variable type&gt; variable name = list.of("item1", "item2")</span>
+<span id="cb4-36"><a href="#cb4-36"></a></span>
+<span id="cb4-37"><a href="#cb4-37"></a>If the items are primitive type, you have to use "wrapper type", where you spell out the name of the primitive type as a whole word and capitalize it. Ex: "int" becomes "Integer"</span>
+<span id="cb4-38"><a href="#cb4-38"></a></span>
+<span id="cb4-39"><a href="#cb4-39"></a><span class="fu">### Looping over Lists </span></span>
+<span id="cb4-40"><a href="#cb4-40"></a></span>
+<span id="cb4-41"><a href="#cb4-41"></a>to do something with each list item use a "for each" loop like:</span>
+<span id="cb4-42"><a href="#cb4-42"></a></span>
+<span id="cb4-43"><a href="#cb4-43"></a>for(String word : magicWords) {</span>
+<span id="cb4-44"><a href="#cb4-44"></a>            System.out.println("I say " + word + "!!");</span>
+<span id="cb4-45"><a href="#cb4-45"></a>        }</span>
+<span id="cb4-46"><a href="#cb4-46"></a></span>
+<span id="cb4-47"><a href="#cb4-47"></a>Things to note:</span>
+<span id="cb4-48"><a href="#cb4-48"></a></span>
+<span id="cb4-49"><a href="#cb4-49"></a><span class="ss">* </span>the variable 'word' gets a new value for each element of the loop</span>
+<span id="cb4-50"><a href="#cb4-50"></a><span class="ss">* </span>you have to declare 'word' just like any other variable</span>
+<span id="cb4-51"><a href="#cb4-51"></a><span class="ss">* </span>The variable doesnt exist outside the loop</span>
+<span id="cb4-52"><a href="#cb4-52"></a><span class="ss">* </span>You can nest lists inside of lists</span>
+<span id="cb4-53"><a href="#cb4-53"></a></span>
+<span id="cb4-54"><a href="#cb4-54"></a><span class="fu">### Getting parts of lists</span></span>
+<span id="cb4-55"><a href="#cb4-55"></a></span>
+<span id="cb4-56"><a href="#cb4-56"></a>You can get a single item from a list:</span>
+<span id="cb4-57"><a href="#cb4-57"></a></span>
+<span id="cb4-58"><a href="#cb4-58"></a><span class="in">      String singleMagicWord = magicWords.get(1);</span></span>
+<span id="cb4-59"><a href="#cb4-59"></a><span class="in">      System.out.println("singleMagicWord = " + singleMagicWord);</span></span>
+<span id="cb4-60"><a href="#cb4-60"></a></span>
+<span id="cb4-61"><a href="#cb4-61"></a>In the above example, the number 1 is the index, or the number that identifies position in a list. List indecies count from 0.</span>
+<span id="cb4-62"><a href="#cb4-62"></a></span>
+<span id="cb4-63"><a href="#cb4-63"></a>To find the length of  a list you can use the method .size(), or you can modify that method to find the last item by doing .size()-1</span>
+<span id="cb4-64"><a href="#cb4-64"></a></span>
+<span id="cb4-65"><a href="#cb4-65"></a>You can also ask for the index of a specific word like this:</span>
+<span id="cb4-66"><a href="#cb4-66"></a></span>
+<span id="cb4-67"><a href="#cb4-67"></a><span class="in">        int indexOfPocus = magicWords.indexOf("pocus");</span></span>
+<span id="cb4-68"><a href="#cb4-68"></a></span>
+<span id="cb4-69"><a href="#cb4-69"></a><span class="in">        System.out.println("indexOfPocus = " + indexOfPocus);</span></span>
+<span id="cb4-70"><a href="#cb4-70"></a><span class="in">        System.out.println("word at that position = " +                         magicWords.get(indexOfPocus));</span></span>
+<span id="cb4-71"><a href="#cb4-71"></a></span>
+<span id="cb4-72"><a href="#cb4-72"></a><span class="fu">### Mutability and Immutability</span></span>
+<span id="cb4-73"><a href="#cb4-73"></a></span>
+<span id="cb4-74"><a href="#cb4-74"></a>Mutible values: they can change and are modifiable</span>
+<span id="cb4-75"><a href="#cb4-75"></a>Immutable values: cannot change! must replace old with new</span>
+<span id="cb4-76"><a href="#cb4-76"></a></span>
+<span id="cb4-77"><a href="#cb4-77"></a>Lists can be both mutable and immutable. When you make a list with List.of(...) it is immutable; the .add() method tries to modify the list rather than make a new one. The work around to creating a new mutable list is to do something like the following: </span>
+<span id="cb4-78"><a href="#cb4-78"></a></span>
+<span id="cb4-79"><a href="#cb4-79"></a><span class="in">       List&lt;String&gt; mutableList = new ArrayList&lt;&gt;();</span></span>
+<span id="cb4-80"><a href="#cb4-80"></a><span class="in">        System.out.println("mutableList = " + mutableList);</span></span>
+<span id="cb4-81"><a href="#cb4-81"></a><span class="in">        </span></span>
+<span id="cb4-82"><a href="#cb4-82"></a>new ArrayList,.() can sort of mean "new empty mutable list" and can be edited with methods like .set, .add, .remove, etc</span>
+<span id="cb4-83"><a href="#cb4-83"></a></span>
+<span id="cb4-84"><a href="#cb4-84"></a>Shortcuts for making a new list and adding all the elements from another list:</span>
+<span id="cb4-85"><a href="#cb4-85"></a></span>
+<span id="cb4-86"><a href="#cb4-86"></a><span class="ss">* </span>addAll() method</span>
+<span id="cb4-87"><a href="#cb4-87"></a><span class="ss">* </span>Put the list you want to copy right between parenthesis of new ArrayList,.(here!)</span>
+<span id="cb4-88"><a href="#cb4-88"></a></span>
+<span id="cb4-89"><a href="#cb4-89"></a></span>
+<span id="cb4-90"><a href="#cb4-90"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

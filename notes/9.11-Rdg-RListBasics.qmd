@@ -1,0 +1,91 @@
+---
+title: "9/11 Reading - R List Basics & Kinds of Testing"
+---
+
+# Software Testing
+
+Trying to break your code is at the core of software testing; it means you can make sure your code never doesn't work (always works)!
+
+### Kinds of Testing
+
+Manual/Interactive Testing: a human interacts with the code by inputting data and observing the results. This could be made up along the way or through a checklist.
+
+* Pros: easy to set up, encourages exploratory testing, can catch problems that the tester wasn’t even looking for but happened to notice
+* Cons:  time-consuming, not easy to repeat, may not be perfectly consistent or thorough every time, easy to miss things
+
+Automated Testing: a developer writes test code that goes through a predetermined list of test cases and checks that the code is producing the correct result. Code checks code. 
+
+* Pros: consistent for different people, consistent over time, tests run fast so it makes sense to test often, excellent for catching regressions (things that used to work, but don’t work anymore)
+* cons: only tests what the test code is looking for, coding tests is time-consuming, test code has to be maintained just like other code and may become a burden, some kinds of tests are hard to automate
+
+Unit Testing: testing one individual part of the software being checked
+
+Integration testing: making sure that the entire thing works
+
+### List Basics in Java
+
+Same as in python, lists... 
+
+* Contain many values of the same type
+* have consistent order
+* may contain duplicates 
+
+Making Lists in Java:
+
+List<variable type> variable name = list.of("item1", "item2")
+
+If the items are primitive type, you have to use "wrapper type", where you spell out the name of the primitive type as a whole word and capitalize it. Ex: "int" becomes "Integer"
+
+### Looping over Lists 
+
+to do something with each list item use a "for each" loop like:
+
+for(String word : magicWords) {
+            System.out.println("I say " + word + "!!");
+        }
+
+Things to note:
+
+* the variable 'word' gets a new value for each element of the loop
+* you have to declare 'word' just like any other variable
+* The variable doesnt exist outside the loop
+* You can nest lists inside of lists
+
+### Getting parts of lists
+
+You can get a single item from a list:
+
+      String singleMagicWord = magicWords.get(1);
+      System.out.println("singleMagicWord = " + singleMagicWord);
+
+In the above example, the number 1 is the index, or the number that identifies position in a list. List indecies count from 0.
+
+To find the length of  a list you can use the method .size(), or you can modify that method to find the last item by doing .size()-1
+
+You can also ask for the index of a specific word like this:
+
+        int indexOfPocus = magicWords.indexOf("pocus");
+
+        System.out.println("indexOfPocus = " + indexOfPocus);
+        System.out.println("word at that position = " +                         magicWords.get(indexOfPocus));
+
+### Mutability and Immutability
+
+Mutible values: they can change and are modifiable
+Immutable values: cannot change! must replace old with new
+
+Lists can be both mutable and immutable. When you make a list with List.of(...) it is immutable; the .add() method tries to modify the list rather than make a new one. The work around to creating a new mutable list is to do something like the following: 
+
+       List<String> mutableList = new ArrayList<>();
+        System.out.println("mutableList = " + mutableList);
+        
+new ArrayList,.() can sort of mean "new empty mutable list" and can be edited with methods like .set, .add, .remove, etc
+
+Shortcuts for making a new list and adding all the elements from another list:
+
+* addAll() method
+* Put the list you want to copy right between parenthesis of new ArrayList,.(here!)
+
+
+
+

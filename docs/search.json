@@ -51,5 +51,60 @@
       "Notes",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>9/9 Reading - R Kinds of Types</span>"
     ]
+  },
+  {
+    "objectID": "notes/9.11-Rdg-RListBasics.html",
+    "href": "notes/9.11-Rdg-RListBasics.html",
+    "title": "4  9/11 Reading - R List Basics & Kinds of Testing",
+    "section": "",
+    "text": "5 Software Testing\nTrying to break your code is at the core of software testing; it means you can make sure your code never doesn’t work (always works)!\n\n5.0.1 Kinds of Testing\nManual/Interactive Testing: a human interacts with the code by inputting data and observing the results. This could be made up along the way or through a checklist.\n\nPros: easy to set up, encourages exploratory testing, can catch problems that the tester wasn’t even looking for but happened to notice\nCons: time-consuming, not easy to repeat, may not be perfectly consistent or thorough every time, easy to miss things\n\nAutomated Testing: a developer writes test code that goes through a predetermined list of test cases and checks that the code is producing the correct result. Code checks code.\n\nPros: consistent for different people, consistent over time, tests run fast so it makes sense to test often, excellent for catching regressions (things that used to work, but don’t work anymore)\ncons: only tests what the test code is looking for, coding tests is time-consuming, test code has to be maintained just like other code and may become a burden, some kinds of tests are hard to automate\n\nUnit Testing: testing one individual part of the software being checked\nIntegration testing: making sure that the entire thing works\n\n\n5.0.2 List Basics in Java\nSame as in python, lists…\n\nContain many values of the same type\nhave consistent order\nmay contain duplicates\n\nMaking Lists in Java:\nList variable name = list.of(“item1”, “item2”)\nIf the items are primitive type, you have to use “wrapper type”, where you spell out the name of the primitive type as a whole word and capitalize it. Ex: “int” becomes “Integer”\n\n\n5.0.3 Looping over Lists\nto do something with each list item use a “for each” loop like:\nfor(String word : magicWords) { System.out.println(“I say” + word + “!!”); }\nThings to note:\n\nthe variable ‘word’ gets a new value for each element of the loop\nyou have to declare ‘word’ just like any other variable\nThe variable doesnt exist outside the loop\nYou can nest lists inside of lists\n\n\n\n5.0.4 Getting parts of lists\nYou can get a single item from a list:\n  String singleMagicWord = magicWords.get(1);\n  System.out.println(\"singleMagicWord = \" + singleMagicWord);\nIn the above example, the number 1 is the index, or the number that identifies position in a list. List indecies count from 0.\nTo find the length of a list you can use the method .size(), or you can modify that method to find the last item by doing .size()-1\nYou can also ask for the index of a specific word like this:\n    int indexOfPocus = magicWords.indexOf(\"pocus\");\n\n    System.out.println(\"indexOfPocus = \" + indexOfPocus);\n    System.out.println(\"word at that position = \" +                         magicWords.get(indexOfPocus));\n\n\n5.0.5 Mutability and Immutability\nMutible values: they can change and are modifiable Immutable values: cannot change! must replace old with new\nLists can be both mutable and immutable. When you make a list with List.of(…) it is immutable; the .add() method tries to modify the list rather than make a new one. The work around to creating a new mutable list is to do something like the following:\n   List&lt;String&gt; mutableList = new ArrayList&lt;&gt;();\n    System.out.println(\"mutableList = \" + mutableList);\n    \nnew ArrayList,.() can sort of mean “new empty mutable list” and can be edited with methods like .set, .add, .remove, etc\nShortcuts for making a new list and adding all the elements from another list:\n\naddAll() method\nPut the list you want to copy right between parenthesis of new ArrayList,.(here!)",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>9/11 Reading - R List Basics & Kinds of Testing</span>"
+    ]
+  },
+  {
+    "objectID": "notes/9.13-Rdg-LoopBasics.html",
+    "href": "notes/9.13-Rdg-LoopBasics.html",
+    "title": "5  9/13 Reading - Loop Basics in Java",
+    "section": "",
+    "text": "5.1 Java’s for-each loop:\nor:",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>9/13 Reading - Loop Basics in Java</span>"
+    ]
+  },
+  {
+    "objectID": "notes/9.13-Rdg-LoopBasics.html#javas-for-each-loop",
+    "href": "notes/9.13-Rdg-LoopBasics.html#javas-for-each-loop",
+    "title": "5  9/13 Reading - Loop Basics in Java",
+    "section": "",
+    "text": "for (String food : twinCitiesFoods) {\n        System.out.println(\"Go try some \" +           food + \"!\");\n    }\n    \n    \n\n  for (loop variable:collection)",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>9/13 Reading - Loop Basics in Java</span>"
+    ]
+  },
+  {
+    "objectID": "notes/9.13-Rdg-LoopBasics.html#javas-while-loops",
+    "href": "notes/9.13-Rdg-LoopBasics.html#javas-while-loops",
+    "title": "5  9/13 Reading - Loop Basics in Java",
+    "section": "5.2 Java’s While Loops:",
+    "text": "5.2 Java’s While Loops:\n\nGood if there is not a collection to iterate over, or if you do not know in advance how many times the loop should iterate before done\nwhile loops are the same concept as in python\n\n\n        Scanner input = new Scanner(System.in);\n        // We make secretNums mutable so we can remove correct guesses as we go: \n        List&lt;String&gt; secretWords = new ArrayList&lt;&gt;(List.of(\"fish\", \"tree\", \"turnip\"));\n        while(!secretWords.isEmpty()) {  // What is the ! operator here? (Answer: “not”)\n            System.out.println(\"There are \" + secretWords.size() + \" words remaining.\");\n            System.out.println(\"Guess a word:\");\n            String guess = input.nextLine();\n            if (secretWords.remove(guess)) {\n                System.out.println(\"You got one!\");\n            } else {\n                System.out.println(\"Nope, sorry.\");\n            }\n            System.out.println();  // blank line for readability\n        }\n        System.out.println(\"Congratulations!\");\n\n\nLoop syntac in Java:\nwhile (condition) {\n(body)\n}\n\na condition is any expression that evaluates to a boolean\nthe body is any sequence of statments\n\nIn java due to static checking it ensures the condition is a boolean prior to running",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>9/13 Reading - Loop Basics in Java</span>"
+    ]
+  },
+  {
+    "objectID": "notes/9.13-Rdg-LoopBasics.html#breaks",
+    "href": "notes/9.13-Rdg-LoopBasics.html#breaks",
+    "title": "5  9/13 Reading - Loop Basics in Java",
+    "section": "5.3 Breaks",
+    "text": "5.3 Breaks\nYou can fix code by using a break statement:\n\n        String secretWord = \"bird\";\n        while(true) {\n            System.out.println(\"Guess a word:\");\n            String guess = input.nextLine();\n            if (guess.equals(secretWord)) {\n                System.out.println(\"You got it!\");\n                break;\n            } else {\n                System.out.println(\"Nope, sorry.\");\n            }\n        }\n\n\nYou may hear “repeat until sentinel”!!\nwhile (true) { do some things if (time to stop) { break } do some other things }\nYou can use breaks inside of loops also!\n\n        for (String food : twinCitiesFoods) {\n            System.out.println(\"Would you like some \" + food + \"?\");\n            String answer = input.nextLine();\n            if (answer.toLowerCase().startsWith(\"y\")) {\n                System.out.println(\"OK, here's some \" + food + \"!\");\n                break;\n            }\n        }\n\n\nYou can also use ‘continue’ statment which means it skips to the next iteration of the loop!\n\n        List&lt;String&gt; outOfStock = List.of(\"星洲炒米\", \"yassa chicken\", \"tamales\");\n        for (String food : twinCitiesFoods) {\n            if (outOfStock.contains(food)) {\n                continue;  // Don’t offer it if we don’t have it!\n            }\n            System.out.println(\"Would you like some \" + food + \"?\");\n            String answer = input.nextLine();\n            if (answer.toLowerCase().startsWith(\"y\")) {\n                System.out.println(\"OK, here's some \" + food + \"!\");\n                break;\n            }\n        }\n\n\nA common pattern:\n(initial step) while (condition) { … do things… (next step) }\nA C Style for loop due to its origin in language C! Also called the “do n times loop” in class.\nfor (initial step); (condition); (next step) { … do things… }\nYou can use the C-style for loop instead of the for-each loop, but it can be confusing! Typically just stick with normal for-loop.\nA common error: The “off by one error”",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>9/13 Reading - Loop Basics in Java</span>"
+    ]
   }
 ]

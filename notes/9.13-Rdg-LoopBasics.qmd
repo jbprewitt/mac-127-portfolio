@@ -1,0 +1,132 @@
+---
+title: "9/13 Reading - Loop Basics in Java"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+```
+
+## Java's for-each loop:
+
+      for (String food : twinCitiesFoods) {
+            System.out.println("Go try some " +           food + "!");
+        }
+        
+        
+or:
+
+      for (loop variable:collection)
+      
+## Java's While Loops:
+
+* Good if there is not a collection to iterate over, or if you do not know in advance how many times the loop should iterate before done
+* while loops are the same concept as in python
+
+```{js}
+        Scanner input = new Scanner(System.in);
+        // We make secretNums mutable so we can remove correct guesses as we go: 
+        List<String> secretWords = new ArrayList<>(List.of("fish", "tree", "turnip"));
+        while(!secretWords.isEmpty()) {  // What is the ! operator here? (Answer: “not”)
+            System.out.println("There are " + secretWords.size() + " words remaining.");
+            System.out.println("Guess a word:");
+            String guess = input.nextLine();
+            if (secretWords.remove(guess)) {
+                System.out.println("You got one!");
+            } else {
+                System.out.println("Nope, sorry.");
+            }
+            System.out.println();  // blank line for readability
+        }
+        System.out.println("Congratulations!");
+```
+
+Loop syntac in Java:
+
+while (condition) {
+
+  (body)
+  
+}
+
+* a condition is any expression that evaluates to a boolean
+* the body is any sequence of statments
+
+In java due to static checking it ensures the condition is a boolean prior to running
+
+
+## Breaks
+
+You can fix code by using a break statement:
+
+```{js}
+        String secretWord = "bird";
+        while(true) {
+            System.out.println("Guess a word:");
+            String guess = input.nextLine();
+            if (guess.equals(secretWord)) {
+                System.out.println("You got it!");
+                break;
+            } else {
+                System.out.println("Nope, sorry.");
+            }
+        }
+```
+
+You may hear "repeat until sentinel"!!
+
+  while (true) {
+    do some things
+    if (time to stop) {
+    break
+    }
+    do some other things
+  }
+  
+You can use breaks inside of loops also!
+
+```{js}
+        for (String food : twinCitiesFoods) {
+            System.out.println("Would you like some " + food + "?");
+            String answer = input.nextLine();
+            if (answer.toLowerCase().startsWith("y")) {
+                System.out.println("OK, here's some " + food + "!");
+                break;
+            }
+        }
+```
+
+You can also use 'continue' statment which means it skips to the next iteration of the loop!
+
+```{js}
+        List<String> outOfStock = List.of("星洲炒米", "yassa chicken", "tamales");
+        for (String food : twinCitiesFoods) {
+            if (outOfStock.contains(food)) {
+                continue;  // Don’t offer it if we don’t have it!
+            }
+            System.out.println("Would you like some " + food + "?");
+            String answer = input.nextLine();
+            if (answer.toLowerCase().startsWith("y")) {
+                System.out.println("OK, here's some " + food + "!");
+                break;
+            }
+        }
+```
+
+A common pattern:
+
+  (initial step)
+  while (condition) {
+    ... do things...
+    (next step)
+  }
+
+A C Style for loop due to its origin in language C! Also called the "do n times loop" in class.
+
+  for (initial step); (condition); (next step) {
+    ... do things...
+  }
+
+You can use the C-style for loop instead of the for-each loop, but it can be confusing! Typically just stick with normal for-loop.
+
+A common error: The "off by one error"
